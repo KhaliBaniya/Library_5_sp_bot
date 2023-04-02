@@ -1,7 +1,9 @@
 package com.example.controller;
 
 import com.example.dto.StudentDTO;
+import com.example.entity.StudentEntity;
 import com.example.exp.AppBadRequestException;
+import com.example.exp.PhoneAlreadyExistsException;
 import com.example.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -77,6 +79,11 @@ public class StudentController {
         return true;
     }
 
+//    @GetMapping(value = "/get/{id}")
+//    public ResponseEntity<?> getById(@PathVariable("id")){
+//        StudentDTO dto = studentService
+//    }
+
     @PutMapping(value = "/update/{id}")
     public Boolean update(@PathVariable("id") String id, @RequestBody StudentDTO studentDTO) {
         for (StudentDTO dto : studentList) {
@@ -93,4 +100,17 @@ public class StudentController {
     public Boolean delete(@PathVariable("id") String id) {
         return studentList.removeIf(studentDTO -> studentDTO.getId().equals(id));
     }
+
+
+
+
+//    @ExceptionHandler(AppBadRequestException.class)
+//    public ResponseEntity<String> handleException(AppBadRequestException e){
+//        return ResponseEntity.badRequest().body(e.getMessage());
+//    }
+//
+//    @ExceptionHandler(AppBadRequestException.class)
+//    public ResponseEntity<String> handleException(PhoneAlreadyExistsException e){
+//        return ResponseEntity.badRequest().body(e.getMessage());
+//    }
 }

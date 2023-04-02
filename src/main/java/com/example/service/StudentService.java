@@ -7,10 +7,26 @@ import com.example.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.net.Inet4Address;
+
 @Service
 public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
+
+
+    StudentDTO getById(Integer id){
+        StudentEntity entity = studentRepository.get(id);
+        if(entity == null){
+            throw new AppBadRequestException("Student not found");
+        }
+        StudentDTO dto = new StudentDTO();
+        dto.setId(entity.getId());
+        dto.setName(entity.getName());
+        dto.setSurname(entity.getSurname());
+
+        return dto;
+    }
 
     public StudentDTO crate(StudentDTO dto) {
         StudentEntity entity = new StudentEntity();
@@ -26,4 +42,16 @@ public class StudentService {
         dto.setId(entity.getId());
         return dto;
     }
+//    public boolean delete(Integer id){
+//        StudentEntity entity = get(id);
+//        studentRepository.delete(entity);
+//        return true;
+//    }
+//
+//    public StudentEntity get(Integer id){
+//        if(entity == null){
+//            throw new AppBadRequestException("Student not found"+id);
+//        }
+//
+//    }    // cheek
 }

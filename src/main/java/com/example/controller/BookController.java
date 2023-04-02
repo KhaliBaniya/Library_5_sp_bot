@@ -50,4 +50,13 @@ public class BookController {
         }
         return false;
     }
+
+        public BookController() {
+        BookDto s1 = new BookDto();
+        s1.setId(1);
+            s1.setTitle("sariq devni minib");
+            s1.setAuthor("O'tkir Xoshimov");
+
+        bookDtoList.add(s1);
+    }
 }
