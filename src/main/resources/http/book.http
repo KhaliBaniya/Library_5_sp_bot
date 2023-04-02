@@ -1,0 +1,36 @@
+POST localhost:8080/book/create
+Content-Type: application/json
+
+{
+  "title": "O'tgan kunlar",
+  "author": "O'tkir Xoshimov",
+  "amount": 25
+
+}
+
+
+
+### book create
+POST localhost:8080/book/create/all
+Content-Type: application/json
+
+[
+  {
+    "title": "O'tgan kunlar1",
+    "author": "O'tkir Xoshimov",
+    "amount": 25
+
+  },
+  {
+    "title": "O'tgan kunlar2",
+    "author": "O'tkir Xoshimov",
+    "amount": 25
+
+  },
+  {
+    "title": "O'tgan kunlar3",
+    "author": "O'tkir Xoshimov",
+    "amount": 25
+
+  }
+]
