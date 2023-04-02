@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Lesson71Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="Library_project_SB" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Lesson71Application" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
